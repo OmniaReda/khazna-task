@@ -1,0 +1,58 @@
+
+.borderBottom{
+    border-bottom: 1px solid gray;
+    display: flex;
+    }
+    .formClass{
+        margin: auto;
+    }
+   
+    .title-of-form{
+        width: 100%;
+        text-align: center;
+        color: #22398c;
+        margin-bottom: 25px;
+    }
+    .company-info{
+        width: 100%;
+        text-align: right;
+        color: #787878;
+        font-weight: bold;
+        margin-bottom: 20px;
+
+    }
+    #front-of-id, #back-of-id{
+        text-align: right;
+        border: 1px dotted #ced4da;
+        cursor: pointer;
+        background-color: transparent;
+        width: 100%;
+        color: gray;
+    }
+     .submit-button{
+         margin-bottom: 50px;
+         
+     }
+     .submit-button button{
+        width: 100%;
+        background-color: #a9a9a9;
+        color: white;
+        border: none;
+        height: 50px;
+     }
+     .error{
+         text-align: right;
+     }
+     .uploaded{
+        border: 1px dotted blue;
+     }
+     .btnRoute{
+         height:35px;
+         margin-top:30px;  
+     }
+     .table td, .table th{
+         text-align: center;
+     }
+     .table thead th {
+         color: white; 
+     }

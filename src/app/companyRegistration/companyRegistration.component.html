@@ -1,0 +1,156 @@
+<div class="content" role="main" dir="rtl">
+    <!-- header of page that contain logo -->
+    <div class="borderBottom">
+      <a href="#"><img src="../assets/images/logo.png" class="img-logo" width="200px" height="100px">
+      </a> 
+      <!-- <button routerLink="/dataOfEmployee" class="btnRoute">Go To Page of Data</button> -->
+      <button routerLink="/dataOfEmployee" type="button" class="btn btn-outline-info btnRoute">Go To Page of Data</button>
+
+  </div>
+  <!-- form of registration -->
+  <form dir="rtl" [formGroup]="registerationForm" (ngSubmit)="onSubmit()" class="col-lg-8  col-sm-12 formClass">
+    <div class="form-row align-items-center">
+    <!-- header of form that contain image -->
+    <div class="headerOfForm">
+      <img src="../assets/images/Logo2.png" width="100%" height="200px">
+    </div>
+    <!-- title of company registration -->
+    <h3 class="title-of-form">تسجيل الشركة</h3>
+  
+    <!-- company info -->
+    <div class="container">
+  
+      <h5 class="company-info">معلومات عن الشركة</h5>
+  
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 mb-2 float-left">
+          <input type="text" class="form-control" id="employer-salary-avg" [ngClass]="{'is-invalid': submitted && formData.employerSalary.errors}" formControlName="employerSalary" placeholder="متوسط مرتب الموظف (بالجنيه المصري) *">
+        <div *ngIf="submitted && formData.employerSalary.errors" class=" invalid-feedback">
+          <div *ngIf="formData.employerSalary.errors.required" class="error">متوسط مرتب الموظف مطلوب</div>
+          <div *ngIf="formData.employerSalary.errors.pattern" class="error">يجب ادخال ارقام فقط</div>
+  
+        </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 mb-2 ">
+          <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && formData.companyName.errors}" formControlName="companyName" id="company-name" placeholder="اسم الشركة(في السجل التجاري) *"/>
+          <div *ngIf="submitted && formData.companyName.errors" class=" invalid-feedback">
+            <div *ngIf="formData.companyName.errors.required" class="error">اسم الشركه مطلوب
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 mb-2 float-left">
+          <input type="text" class="form-control" formControlName="companyWebsite" [ngClass]="{'is-invalid': submitted && formData.companyWebsite.errors}" id="company-website" placeholder="موقع الشركةالالكتروني او رابط الفيسبوك *">
+          <div *ngIf="submitted && formData.companyWebsite.errors"  class=" invalid-feedback">
+            <div *ngIf="formData.companyWebsite.errors.required" class="error">موقع الشركه الالكتروني مطلوب</div>
+              <div *ngIf="formData.companyWebsite.errors.pattern" class="error">يجب ادخال الموقع بطريقه صحيحه
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 mb-2">
+          <input type="text" class="form-control" formControlName="employersNumber" [ngClass]="{'is-invalid': submitted && formData.employersNumber.errors}" id="employers-number" placeholder="عدد الموظفين *">
+          <div *ngIf="submitted && formData.employersNumber.errors"  class=" invalid-feedback">
+            <div *ngIf="formData.employersNumber.errors.required" class="error">عدد الموظفين مطلوب          </div>
+            <div *ngIf="formData.employersNumber.errors.pattern" class="error">يجب ادخال ارقام فقط</div>
+  
+          </div>
+        </div>
+      </div>
+  
+      
+    </div>
+    <!-- end company info -->
+  
+    <!-- Who has the right to sign -->
+    <div class="container">
+  
+      <h5 class="company-info"> بيانات من له حق التوقيع
+        <small>(وفقاً للسجل التجاري)</small>
+  
+      </h5>
+  
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 mb-2 float-left">
+          <input type="text" class="form-control" formControlName="mobileNumber" [ngClass]="{'is-invalid': submitted && formData.mobileNumber.errors}"  id="mobile-number" placeholder="رقم التليفون المحمول *">
+          <div *ngIf="submitted && formData.mobileNumber.errors"  class=" invalid-feedback">
+            <div *ngIf="formData.mobileNumber.errors.required" class="error">رقم الهاتف مطلوب          </div>
+            <div *ngIf="formData.mobileNumber.errors.pattern" class="error">يجب ادخال ارقام فقط</div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 mb-2 ">
+          <input type="text" class="form-control" formControlName="name" [ngClass]="{'is-invalid': submitted && formData.name.errors}" id="name" placeholder="الاسم *">
+          <div *ngIf="submitted && formData.name.errors"  class=" invalid-feedback">
+            <div *ngIf="formData.name.errors.required" class="error">الاسم مطلوب          </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 mb-2 float-left">
+          <input type="text" class="form-control"  formControlName="email" [ngClass]="{'is-invalid': submitted && formData.email.errors}"id="email" placeholder="البريد الالكتروني *">
+          <div *ngIf="submitted && formData.email.errors"  class=" invalid-feedback">
+            <div *ngIf="formData.email.errors.required" class="error">البريد الالكتروني مطلوب          </div>
+            <div *ngIf="formData.email.errors.email" class="error">يجب ادخال بريد الكتروني صحيح</div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 mb-2 ">
+        </div>
+      </div>
+      <!-- files upload -->
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 mb-2 float-left">
+          <input 
+          style="display: none" 
+          type="file" 
+          multiple 
+          (change)="onFileChangedfront($event)" 
+          accept=".pdf"
+          #fileInputfront
+      />
+            <input 
+            type="button" 
+            class="upload-button" id="front-of-id" [ngClass]="{'uploaded': uploadedfront }"
+            value="+حمل بطاقه الرقم القومي(وجه) * " 
+            (click)="fileInputfront.click()"
+            
+        />
+        </div>
+        <div class="col-lg-6 col-sm-12 mb-2">
+          <input 
+          style="display: none" 
+          type="file" 
+          multiple 
+          (change)="onFileChangedBack($event)" 
+          formControlName="backOfId"
+          #fileInputback
+      />
+            <input 
+            type="button" 
+            class="upload-button" id="back-of-id" [ngClass]="{'uploaded': uploaded }"
+            value="+حمل بطاقه الرقم القومي(ظهر) * " 
+            (click)="fileInputback.click()"
+            
+        />
+        <div *ngIf="formData.backOfId.errors"  class=" invalid-feedback">
+          <div *ngIf="formData.backOfId.errors.fileExtError"  class="error">برجاء ادخال ملف pdf </div>
+        </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  <!-- submit button -->
+    <div class="container submit-button">
+    <button type="submit" >تقديم طلب التسجيل</button>
+  </div>
+  
+    </div>
+  </form>
+  
+  
+  
+    
+  </div>
+  
+  
+  <router-outlet></router-outlet>

@@ -1,0 +1,22 @@
+<button routerLink="/companyRegistration" type="button" class="btn btn-outline-warning btnRoute mb-2">back to registration page</button>
+
+<!-- table of employee data -->
+<table class="table">
+    <thead class="table-info">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Employee Age</th>
+        <th scope="col">Employee Salary</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="employees">
+      <tr *ngFor="let employee of employees" class="table-secondary" >
+        <th scope="row">{{ employee.id }} </th>
+        <td>{{ employee.employee_name }} </td>
+        <td>{{ employee.employee_age }} </td>
+        <td>{{ employee.employee_salary }} </td>
+      </tr>
+     
+    </tbody>
+  </table>
